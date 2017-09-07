@@ -1,0 +1,9 @@
+{% if item is defined %}
+    <h3>{{ item.announce }}</h3><hr>
+    <p class="description">{{ item.description }}</p>
+
+    <p class="text-right">
+        {{ item.date|date("Y-m-d") }}
+    </p>
+
+{% endif %}

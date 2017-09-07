@@ -1,0 +1,4 @@
+services:
+    post_service:
+        class: AcmeNewsBundle\Service\PostService
+        arguments: ["@doctrine.orm.entity_manager", "@knp_paginator",  "%acme_news.catalog_posts_per_page%", "%acme_news.latest_posts_per_page%"]

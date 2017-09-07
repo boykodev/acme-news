@@ -1,0 +1,4 @@
+{% extends 'base.xml.twig' %}
+{% block body %}
+    {{ include('AcmeNewsBundle:Post:item.xml.twig', { 'item': post }) }}
+{% endblock %}

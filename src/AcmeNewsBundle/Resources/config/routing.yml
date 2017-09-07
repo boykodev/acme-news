@@ -1,0 +1,14 @@
+acme_news_catalog:
+    path:     /news.{_format}
+    defaults: { _controller: AcmeNewsBundle:Catalog:index, _format: html, page: 1 }
+    requirements:
+        _format:  html|xml
+        page: \d+
+    methods:  [GET]
+
+acme_news_page:
+    path:     /news/{id}.{_format}
+    defaults: { _controller: AcmeNewsBundle:Page:index, _format: html }
+    requirements:
+          _format:  html|xml
+    methods:  [GET]

@@ -1,0 +1,13 @@
+{% if item is defined %}
+<item id="{{ item.id }}" date="{{ item.date|date("Y-m-d") }}">
+    {% if item.announce is defined
+      and item.announce is not empty %}
+        <announce>{{ item.announce }}</announce>
+    {% endif %}
+
+    {% if item.description is defined
+      and item.description is not empty %}
+        <description>{{ item.description }}</description>
+    {% endif %}
+</item>
+{% endif %}

@@ -1,0 +1,14 @@
+{% if item is defined %}
+    <div class="announce">
+
+        {% if item.announce is defined
+          and item.announce is not empty %}
+            <p>
+                <a href="{{ path('acme_news_page', {'id': item.id}) }}">{{ item.announce }}</a>
+            </p>
+            <p class="text-right">
+                {{ item.date|date("Y-m-d") }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}

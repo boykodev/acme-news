@@ -1,0 +1,8 @@
+{% extends 'base.xml.twig' %}
+{% block body %}
+    <list>
+        {% for post in pagination.items %}
+            {{ include('AcmeNewsBundle:Post:item.xml.twig', { 'item': post }) }}
+        {% endfor %}
+    </list>
+{% endblock %}

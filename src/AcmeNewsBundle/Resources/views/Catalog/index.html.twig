@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}{{ titlePostfix }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="{{ path('acme_news_catalog', {_format: 'xml'}) }}">
+                    <button type="button" class="btn btn-primary btn-block">VIEW XML VERSION</button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <h1>{{ title }}{{ titlePostfix }}</h1>
+                {% for item in pagination.items %}
+                    {{ include('AcmeNewsBundle:Post:itemInCatalog.html.twig', { 'item': item }) }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <nav class="text-center">
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
